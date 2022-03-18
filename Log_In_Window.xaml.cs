@@ -344,9 +344,6 @@ namespace Client__To_Server_App
 
                                             try
                                             {
-                                                AnimationTimer?.Stop();
-                                                AnimationTimer?.Dispose();
-
                                                 var ParallelProcessing = new System.Threading.Thread(async () =>
                                                 {
                                                     string Id = Id_Buffer;
@@ -358,7 +355,9 @@ namespace Client__To_Server_App
                                                     switch (response)
                                                     {
                                                         case true:
-
+                                                            AnimationTimer?.Stop();
+                                                            AnimationTimer?.Dispose();
+                                                            
                                                             Application.Current.Dispatcher.Invoke(() =>
                                                             {
                                                                 MainWindow mainWindow = new MainWindow(Id, Password);
