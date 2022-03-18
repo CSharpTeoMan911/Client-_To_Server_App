@@ -1,0 +1,176 @@
+﻿<Window x:Class="Client__To_Server_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Client__To_Server_App"
+        mc:Ignorable="d"
+        Title="MainWindow" x:Name="ClientMainWindow" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" Background="Transparent" Loaded="Window_Loaded" Closing="Window_Is_Closing">
+
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Transparent" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="WidthReference"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="HeightReference"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <Canvas Panel.ZIndex="5" Grid.RowSpan="8" Grid.ColumnSpan="8">
+            <Button x:Name="MenuButton" Panel.ZIndex="5" Canvas.Left="10" Canvas.Top="5" FontFamily="Segoe MDL2 Assets" Margin="6,6,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="35" Background="Transparent" Style="{StaticResource MyButtonStyle}" Click="ExpandTheMainMenu" Content="&#xE700;">
+                <Button.Foreground>
+                    <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="Gray"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+
+
+            <Rectangle x:Name="WindowHandle" Fill="#FF002948" Panel.ZIndex="1"  Width ="{Binding ElementName=ClientMainWindow, Path=ActualWidth}" Height="55" Grid.ColumnSpan="8" MouseDown="MoveTheWindow" RenderTransformOrigin="0.5,0.5"/>
+
+
+            <StackPanel Panel.ZIndex="5" x:Name="Menu_Stackpanel" Height="0" Canvas.Top="55" Background="#FF004B7B">
+
+
+
+                <Button Margin="20,10,20,15" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" FontFamily="Corbel Light" FontSize="18" Content="Profile" Style="{StaticResource MyButtonStyle}" Click="Profile_Section">
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDAD2D2"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
+
+                <Button Margin="20,0,20,15" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" FontFamily="Corbel Light" FontSize="18" Content="Grades" Style="{StaticResource MyButtonStyle}" Click="Grades_Section">
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDAD2D2"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
+
+                <Button Margin="20,0,20,15" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" FontFamily="Corbel Light" FontSize="18" Content="Materials" Style="{StaticResource MyButtonStyle}" Click="Materials_Section">
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDAD2D2"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
+
+                <Button Margin="20,0,20,15" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" FontFamily="Corbel Light" FontSize="18" Content="Contacts" Style="{StaticResource MyButtonStyle}" Click="Contacts_Section">
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDAD2D2"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                </Button>
+
+                <Button Margin="20,0,20,0" HorizontalAlignment="Center" BorderBrush="Transparent" FontFamily="Corbel Light" FontSize="18" Content="Log Out" Style="{StaticResource MyButtonStyle}" Click="Log_Out_Section">
+
+                    <Button.Background>
+
+                        <LinearGradientBrush StartPoint="0.5,1" EndPoint="0,1">
+
+                            <GradientStop Color="#FF0D1D3C" Offset="1"/>
+                            <GradientStop Color="#FF2F679C"/>
+
+                        </LinearGradientBrush>
+
+                    </Button.Background>
+
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                            <GradientStop Color="White" Offset="1"/>
+                            <GradientStop Color="#FFDAD2D2"/>
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+
+                </Button>
+            </StackPanel>
+        </Canvas>
+
+
+
+
+        <StackPanel Panel.ZIndex="5" Orientation="Horizontal" Grid.Column="6" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,15,0">
+            <Button x:Name="MinimiseTheWindowButton" Margin="0,0,20,0" Style="{StaticResource MyButtonStyle}" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe MDL2 Assets" FontSize="15" Content="&#xEF2D;" Click="MinimiseTheWindow">
+                <Button.Foreground>
+                    <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="Gray"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+
+            <Button x:Name="NormaliseOrMaximiseTheWindowButton" Margin="0,0,20,0" Style="{StaticResource MyButtonStyle}" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe MDL2 Assets" FontSize="15" Content="&#xEF2E;" Click="NormaliseOrMaximiseTheWindow">
+                <Button.Foreground>
+                    <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="Gray"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+
+            <Button x:Name="CloseTheWindowButton" Style="{StaticResource MyButtonStyle}" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe MDL2 Assets" FontSize="15" Content="&#xEF2C;" Click="CloseTheWindow">
+                <Button.Foreground>
+                    <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="Gray"/>
+                    </LinearGradientBrush>
+                </Button.Foreground>
+            </Button>
+        </StackPanel>
+
+        <Frame Panel.ZIndex="3" x:Name="Functionality_Mainframe" Grid.Row="1" Grid.RowSpan="7" Grid.ColumnSpan="8" NavigationUIVisibility="Hidden"/>
+
+        <Rectangle Fill ="#FF002948" Grid.RowSpan="8" Grid.ColumnSpan="8" Panel.ZIndex="0" Stretch="Fill" Height="{Binding ElementName=ClientMainWindow, Path= ActualHeight}" Width="{Binding ElementName=ClientMainWindow, Path=ActualWidth}" Opacity="0.95"/>
+
+    </Grid>
+    
+</Window>

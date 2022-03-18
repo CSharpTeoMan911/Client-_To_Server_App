@@ -1,0 +1,177 @@
+﻿<Page x:Class="Client__To_Server_App.GradesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client__To_Server_App"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GradesPage" Loaded="Grades_Page_Loaded">
+
+    <Page.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Transparent" 
+                            CornerRadius="3" 
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="White" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        
+
+        <ScrollViewer Panel.ZIndex="0" Grid.Row="1" Grid.ColumnSpan="8" Grid.RowSpan="6" Margin="20,0,20,0">
+
+            <StackPanel>
+                
+                <StackPanel x:Name="Grades_Page_Control_Stackpanel">
+
+                    <Button x:Name="Fundamentals_of_Programming_Subsection_Button" Margin="0,50,0,50" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Fundamentals_of_Programming_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="Programming Edited.png" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="Computer_Systems_Subsection_Button" Margin="0,50,0,50" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Computer_Systems_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="Computer Systems Edited.png" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="Foundation_Project_Subsection_Button" Margin="0,50,0,50" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Foundation_Project_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="project Edited.png" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="Logical_Analisys_And_Problem_Solving_Subsection_Button" Width="400" Margin="0,50,0,50" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Logical_Analisys_And_Problem_Solving_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="Logic Edited.png" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="Databases_Subsection_Button" Margin="0,50,0,50" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Databases_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="DataBaseImageEdited.jpg" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="Fundamentals_of_Software_Engineering_Subsection_Button" Width="400" Margin="0,50,0,50" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Bahnschrift" FontSize="30" Style="{StaticResource MyButtonStyle}" Foreground="White" Click="Load_Fundamentals_of_Software_Engineering_Subsection_Grades">
+                        <Button.Content>
+                            <Image Source="Software Engineering Edited.png" Stretch="Fill"/>
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
+
+                <StackPanel x:Name="Grade_Displayer" Height="0">
+
+                    <StackPanel x:Name="Title_StackPanel" Margin="0,40,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <Button  x:Name="Go_Back_Button" Margin="0,0,10,0" Style="{StaticResource MyButtonStyle}" FontFamily="Segoe MDL2 Assets" Foreground="White" FontSize="20" Content="&#xE012;" Click="Go_Back_To_The_Main_Menu"/>
+                        
+                        <TextBlock x:Name="Subject_TextBlock"  HorizontalAlignment="Center" FontFamily="Corbel Light" FontSize="25" Text="Subject:    Computer Systems">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="Gray"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        
+                    </StackPanel>
+
+                    
+
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock x:Name="Grade1_TextBlock" Margin="0,50,0,0" FontFamily="Corbel Light"  FontSize="25">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="Gray"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                        <TextBlock x:Name="Grade2_TextBlock" Margin="0,20,0,0" FontFamily="Corbel Light" FontSize="25">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="Gray"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                        <TextBlock x:Name="Grade3_TextBlock" Margin="0,20,0,0" FontFamily="Corbel Light" FontSize="25">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="Gray"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+
+                        <TextBlock x:Name="Final_Grade_TextBlock" Margin="0,20,0,0" FontFamily="Corbel Light" FontSize="25">
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                                    <GradientStop Color="White" Offset="1"/>
+                                    <GradientStop Color="Gray"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+                        </TextBlock>
+                        
+                    </StackPanel>
+                    
+                </StackPanel>
+                
+            </StackPanel>
+            
+        </ScrollViewer>
+        
+        <TextBlock x:Name="Title_TextBlock" Grid.Column="2" Grid.ColumnSpan="4" FontSize="45" FontFamily="Corbel Light" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Grades">
+            <TextBlock.Foreground>
+                <LinearGradientBrush StartPoint="0.5, 1" EndPoint="0, 1">
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="Gray"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        
+    </Grid>
+</Page>

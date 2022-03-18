@@ -1,0 +1,62 @@
+﻿<Page x:Class="Client__To_Server_App.Contacts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Client__To_Server_App"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Contacts" Loaded="Contacts_Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        
+
+        <Rectangle Grid.Row="0" Grid.RowSpan="7" Grid.ColumnSpan="8" Fill="White"/>
+
+        <TextBlock x:Name="Title_TextBlock" Grid.Column="2" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Foreground="#FF004B7B" FontFamily="Corbel Light" Text="Contacts"/>
+        
+        <StackPanel Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="8" HorizontalAlignment="Center" Orientation="Horizontal">
+
+            <Image x:Name="First_Academic_Institution_Image" Stretch="UniformToFill" Margin="0,0,100,0"/>
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock x:Name="First_Academic_Institution_Phone_Number_TextBlock" FontFamily="Corbel Light" Margin="0,0,0,20" FontSize="20" Foreground="#FF004B7B" Text="Phone number:"/>
+                <TextBlock x:Name="First_Academic_Institution_Email_TextBlock" FontFamily="Corbel Light" FontSize="20" Foreground="#FF004B7B" Text="Email address:"/>
+            </StackPanel>
+            
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.RowSpan="3" Grid.ColumnSpan="8" HorizontalAlignment="Center" Orientation="Horizontal">
+
+            <Image x:Name="Second_Academic_Institution_Image" Stretch="UniformToFill" Margin="0,0,100,0"/>
+
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock x:Name="Second_Academic_Institution_Phone_Number_TextBlock" FontFamily="Corbel Light" Margin="0,0,0,20" FontSize="20" Foreground="#FF004B7B" Text="Phone number:"/>
+                <TextBlock x:Name="Second_Academic_Institution_Email_TextBlock" FontFamily="Corbel Light" FontSize="20" Foreground="#FF004B7B" Text="Email address:"/>
+            </StackPanel>
+
+        </StackPanel>
+        
+    </Grid>
+</Page>
