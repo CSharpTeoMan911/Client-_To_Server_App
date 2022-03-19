@@ -39,4 +39,4 @@ __________________________
 __________________
 
 Watch the TUTORIAL.mp4 video in order to understand how to use it.
-! ! ! READ THE WIKI SECTION OF THE REPOSITORY FOR A DETAILED STEP BY STEP TUTORIAL ! ! ! !
+<br/>! ! ! READ THE WIKI SECTION OF THE REPOSITORY FOR A DETAILED STEP BY STEP TUTORIAL ! ! ! !
