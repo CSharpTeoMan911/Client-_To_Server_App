@@ -64,9 +64,14 @@ namespace Client__To_Server_App
                     }
                     catch
                     {
-                        BitmapImage image = new BitmapImage(new Uri("default-picture.jpg", UriKind.RelativeOrAbsolute));
+                       try
+                       {
+                          BitmapImage image = new BitmapImage(new Uri("default-picture.jpg", UriKind.RelativeOrAbsolute));
 
-                        Profile_Picture.ImageSource = image;
+                          Profile_Picture.ImageSource = image;
+                       }
+                       catch
+                       { }
                     }
 
                     UsernameTextBox.Text = "ID: " + ID;
