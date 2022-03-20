@@ -12,15 +12,13 @@ certain prerequisites in visual studio in order to run it.
 You need to have the database designed by me installed in your MySQL Workbench DBMS.
 You can find the database in the Backend_Server_Application repository.
 ____________________________________________________________________________________
--
--
--
--
--
--
--
-
-
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
 
 Operational Prerequisites
@@ -28,13 +26,14 @@ __________________________
 
 - The Backend server application made by me
 __________________________
--
--
--
--
--
--
--
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 !!! NOTE !!!!
 __________________
 
