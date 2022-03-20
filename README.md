@@ -1,7 +1,7 @@
 # Client-_To_Server_App
 
 
-ABOUT
+## ABOUT
 ___________________________________________________________________________________
 
 This Client Application is designed to work as a student records system .
@@ -21,7 +21,7 @@ ________________________________________________________________________________
 <br/>
 
 
-Operational Prerequisites
+## Operational Prerequisites
 __________________________
 
 - The Backend server application made by me
@@ -34,7 +34,7 @@ __________________________
 <br/>
 <br/>
 
-!!! NOTE !!!!
+## !!! NOTE !!!!
 __________________
 
 Watch the TUTORIAL.mp4 video in order to understand how to use it.
