@@ -40,7 +40,4 @@ __________________
 Watch the TUTORIAL.mp4 video in order to understand how to use it.
 <br/>
 <br/>
-Add the default-picture.jpg picture in the bin folder.
-<br/>
-<br/>
 ! ! ! READ THE WIKI SECTION OF THE REPOSITORY FOR A DETAILED STEP BY STEP TUTORIAL ! ! ! !
